@@ -30,6 +30,47 @@ What it does:
 - Agent edits an in-scope file → allowed silently.
 - `/umbra:admit` → full pipeline + earned authority + signed receipt on demand.
 
+### How the guard works
+
+```
+Claude Code is about to Edit/Write/run Bash
+        │
+        ▼
+  PreToolUse hook  ──►  hooks/umbra-guard.sh
+        │                     │  (passes the tool JSON on stdin)
+        │                     ▼
+        │              umbra guard  ── loads .umbra/admission.yaml,
+        │              (umbra-core)    checks the path/command deterministically
+        │                     │
+        ▼                     ▼
+   deny? ◄──── permissionDecision: "deny" + reason   (forbidden / out-of-scope / dangerous)
+   allow? ◄─── {}  (silent → normal permission flow continues)
+```
+
+- The decision is made by **`umbra guard` (umbra-core), not the model** — so the
+  agent can't approve its own out-of-scope change. This is the whole point: an
+  agent cannot govern itself.
+- On the **first** tool call, a `SessionStart` hook provisions `umbra-core` into a
+  plugin-local venv using a Python ≥3.11 (it skips an older default `python3`). It
+  prints **`Umbra active: …`** when ready, or a loud **`INACTIVE — NOT enforcing`**
+  line if it can't (e.g. no Python 3.11+ / offline) — so "installed" is never
+  mistaken for "protected".
+- It **fails open** (never blocks) if umbra-core genuinely can't run, so it can't
+  break a session; the `INACTIVE` notice tells you when that happens.
+
+### See it without an interactive session
+
+Reviewers (and you) can verify enforcement in one command — it drives the real
+hook with the exact tool JSON Claude Code sends, against a throwaway repo:
+
+```bash
+bash demos/try-guard.sh
+```
+
+Expected output: `deploy.yml`, `curl | bash`, `cat .env`, and a `.pem` write are
+**BLOCKED** with reasons; an in-scope `src/app.js` edit is **ALLOWED**. Requires
+`bash`, `git`, and Python ≥3.11 (the hook self-provisions umbra-core).
+
 ## Cursor
 
 MCP server + a project rule. See [`cursor/`](cursor/). Cursor has no deterministic
