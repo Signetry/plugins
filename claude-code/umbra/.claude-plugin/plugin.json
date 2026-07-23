@@ -1,7 +1,7 @@
 {
   "name": "umbra",
   "description": "Govern coding-agent edits in real time: block out-of-scope or forbidden file writes and dangerous commands before they happen, using your repo's .umbra/admission.yaml. Deterministic (not the model). From umbra-core.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "bkd-dotcom",
     "url": "https://github.com/bkd-dotcom"

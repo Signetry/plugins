@@ -1,5 +1,18 @@
 {
   "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/umbra-session-start.sh",
+            "args": [],
+            "timeout": 120,
+            "statusMessage": "Umbra: preparing the change-control guard…"
+          }
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "Edit|Write|MultiEdit|NotebookEdit",
@@ -7,7 +20,7 @@
           {
             "type": "command",
             "command": "${CLAUDE_PLUGIN_ROOT}/hooks/umbra-guard.sh",
-            "args": ["${CLAUDE_PLUGIN_ROOT}"],
+            "args": [],
             "timeout": 30,
             "statusMessage": "Umbra: checking the change against your contract…"
           }
@@ -19,7 +32,7 @@
           {
             "type": "command",
             "command": "${CLAUDE_PLUGIN_ROOT}/hooks/umbra-guard.sh",
-            "args": ["${CLAUDE_PLUGIN_ROOT}"],
+            "args": [],
             "timeout": 30,
             "statusMessage": "Umbra: checking the command against your contract…"
           }
