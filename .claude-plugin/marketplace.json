@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Umbra — govern coding-agent changes in your editor and CI. Real-time contract enforcement with signed receipts.",
-    "version": "0.2.1"
+    "version": "0.2.2"
   },
   "plugins": [
     {
