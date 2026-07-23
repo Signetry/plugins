@@ -1,0 +1,9 @@
+{
+  "umbra": {
+    "command": "python",
+    "args": ["-m", "umbra_core.mcp_server"],
+    "env": {
+      "UMBRA_MCP_ROOTS": "${CLAUDE_PROJECT_DIR}"
+    }
+  }
+}

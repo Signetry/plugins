@@ -1,0 +1,10 @@
+# Umbra MCP server for Codex — add to ~/.codex/config.toml
+# Requires: pip install "umbra-core>=0.2.0"
+
+[mcp_servers.umbra]
+command = "python"
+args = ["-m", "umbra_core.mcp_server"]
+
+[mcp_servers.umbra.env]
+# Scope the server to your workspace(s) so it can't be pointed at arbitrary paths.
+UMBRA_MCP_ROOTS = "/absolute/path/to/your/repo"
