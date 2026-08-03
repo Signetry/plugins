@@ -15,5 +15,5 @@ for PY in python3.13 python3.12 python3.11 python3 python; do
     exec "$PY" -m umbra_core.mcp_server
   fi
 done
-echo "umbra-core[mcp] not available on a Python >=3.11; run: pip install 'umbra-core[mcp] @ git+https://github.com/bkd-dotcom/umbra-core@v0.5.3'" >&2
+echo "umbra-core[mcp] not available on a Python >=3.11; run: pip install 'umbra-core[mcp] @ git+https://github.com/bkd-dotcom/umbra-core@v0.5.4'" >&2
 exit 1
