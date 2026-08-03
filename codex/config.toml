@@ -1,5 +1,5 @@
 # Umbra MCP server for Codex — add to ~/.codex/config.toml
-# Requires: pip install "umbra-core>=0.2.0"
+# Requires: pip install "umbra-core @ git+https://github.com/bkd-dotcom/umbra-core@v0.5.3"
 
 [mcp_servers.umbra]
 command = "python"

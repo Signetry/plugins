@@ -6,7 +6,7 @@ Two ways to govern coding-agent changes in Cursor with
 ## Prerequisite
 
 ```bash
-pip install "umbra-core>=0.2.0"
+pip install "umbra-core @ git+https://github.com/bkd-dotcom/umbra-core@v0.5.3"
 ```
 
 Add a `.umbra/admission.yaml` to your repo declaring allowed/forbidden paths,
