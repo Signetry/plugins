@@ -6,7 +6,7 @@
 # or manually. It checks proposed file paths and/or a command against the repo's
 # .umbra/admission.yaml and exits non-zero (blocking) on a violation.
 #
-# Requires:  pip install "umbra-core @ git+https://github.com/bkd-dotcom/umbra-core@v0.5.3"
+# Requires:  pip install "umbra-core @ git+https://github.com/bkd-dotcom/umbra-core@v0.5.4"
 #
 # Usage:
 #   umbra-guard.sh --path src/app.py
@@ -17,7 +17,7 @@
 set -euo pipefail
 
 if ! command -v umbra >/dev/null 2>&1; then
-  echo "umbra-guard: umbra-core not installed. Run: pip install 'umbra-core @ git+https://github.com/bkd-dotcom/umbra-core@v0.5.3'" >&2
+  echo "umbra-guard: umbra-core not installed. Run: pip install 'umbra-core @ git+https://github.com/bkd-dotcom/umbra-core@v0.5.4'" >&2
   # Fail open by default so this never blocks a commit unexpectedly; set
   # UMBRA_GUARD_STRICT=1 to fail closed when umbra is missing.
   [ "${UMBRA_GUARD_STRICT:-0}" = "1" ] && exit 1 || exit 0
