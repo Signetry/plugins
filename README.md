@@ -6,12 +6,12 @@
 
 **Govern coding-agent changes inside your editor — and in CI — with signed receipts.**
 
-Editor and agent integrations for [umbra-core](https://github.com/bkd-dotcom/umbra-core):
+Editor and agent integrations for [umbra-core](https://github.com/Signetry/core):
 Umbra decides how much authority an agent's change has earned and proves it. These
 plugins bring that governance *into the tools where agents work* — enforced by
 deterministic code, never by the model itself (an agent can't approve its own change).
 
-> Prerequisite for all integrations: `pip install "umbra-core @ git+https://github.com/bkd-dotcom/umbra-core@v0.5.4"` and a
+> Prerequisite for all integrations: `pip install "umbra-core @ git+https://github.com/Signetry/core@v0.5.4"` and a
 > `.umbra/admission.yaml` in your repo (a conservative default applies without one).
 
 ## Claude Code plugin (deepest integration)

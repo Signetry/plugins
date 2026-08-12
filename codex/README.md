@@ -1,12 +1,12 @@
 # Umbra for Codex
 
 Govern coding-agent changes in [OpenAI Codex](https://developers.openai.com/codex)
-with [umbra-core](https://github.com/bkd-dotcom/umbra-core).
+with [umbra-core](https://github.com/Signetry/core).
 
 ## Prerequisite
 
 ```bash
-pip install "umbra-core @ git+https://github.com/bkd-dotcom/umbra-core@v0.5.4"
+pip install "umbra-core @ git+https://github.com/Signetry/core@v0.5.4"
 ```
 
 Add a `.umbra/admission.yaml` to your repo (allowed/forbidden paths, diff budget,

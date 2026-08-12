@@ -10,7 +10,7 @@ report the result to the user.
 Steps:
 
 1. Confirm `umbra` is available: run `umbra --help`. If it is not installed, tell
-   the user to run `pip install "umbra-core @ git+https://github.com/bkd-dotcom/umbra-core@v0.5.4"` and stop.
+   the user to run `pip install "umbra-core @ git+https://github.com/Signetry/core@v0.5.4"` and stop.
 2. Run admission over the change already present in the working tree (no agent is
    re-invoked — the change being governed is what's on disk):
 

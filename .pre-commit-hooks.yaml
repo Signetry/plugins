@@ -1,7 +1,7 @@
 # Umbra pre-commit hook. Add to your repo's .pre-commit-config.yaml:
 #
 #   repos:
-#     - repo: https://github.com/bkd-dotcom/umbra-plugins
+#     - repo: https://github.com/Signetry/plugins
 #       rev: v0.2.0
 #       hooks:
 #         - id: umbra-guard
