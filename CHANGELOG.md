@@ -1,4 +1,22 @@
-# Changelog — Umbra plugins
+# Changelog — Signetry plugins
+
+## [Unreleased]
+
+### Changed — rebranded Umbra → Signetry
+
+- Renamed the platform kernel dependency `umbra-core` → `signetry-core` (now
+  installed from the git tag `git+https://github.com/Signetry/core@v0.6.0`),
+  including the `[mcp]` extra used by the MCP launcher.
+- CLI command `umbra` → `signetry` across all shell hooks, scripts, docs, and
+  editor configs (e.g. `signetry admit`, `signetry guard`, `signetry --json admit`).
+- Environment variables `UMBRA_*` → `SIGNETRY_*` (e.g. `SIGNETRY_MCP_ROOTS`,
+  `SIGNETRY_REPO`, `SIGNETRY_GUARD_STRICT`).
+- Config directory `.umbra/` → `.signetry/` and `.umbra/admission.yaml` →
+  `.signetry/admission.yaml`.
+- Python import path `umbra_core` → `signetry_core`.
+- Sibling package references `umbra-reviewer` → `signetry-reviewer`.
+- Plugin/marketplace names, hook/script filenames, and brand prose renamed to
+  Signetry. No backward-compatibility fallbacks are retained.
 
 ## [0.2.2] — 2026-07-23
 

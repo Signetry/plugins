@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 #
-# See the Umbra Claude Code guard in action — WITHOUT an interactive session.
+# See the Signetry Claude Code guard in action — WITHOUT an interactive session.
 #
-# This drives the plugin's real PreToolUse hook (hooks/umbra-guard.sh) with the
+# This drives the plugin's real PreToolUse hook (hooks/signetry-guard.sh) with the
 # exact tool-call JSON Claude Code sends for Edit/Write/Bash, against a throwaway
-# repo with a sample .umbra/admission.yaml. It's the same code path a live
+# repo with a sample .signetry/admission.yaml. It's the same code path a live
 # session hits — a great way for reviewers to verify enforcement quickly.
 #
 # Requirements: bash, git, and Python >=3.11 available (the hook self-provisions
-# umbra-core into a plugin-local venv on first run).
+# signetry-core into a plugin-local venv on first run).
 #
 # Usage:  bash demos/try-guard.sh
 set -euo pipefail
 
-PLUGIN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../claude-code/umbra" && pwd)"
-GUARD="$PLUGIN_ROOT/hooks/umbra-guard.sh"
-SESSION_START="$PLUGIN_ROOT/hooks/umbra-session-start.sh"
+PLUGIN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../claude-code/signetry" && pwd)"
+GUARD="$PLUGIN_ROOT/hooks/signetry-guard.sh"
+SESSION_START="$PLUGIN_ROOT/hooks/signetry-session-start.sh"
 
 WORK="$(mktemp -d)"
 export CLAUDE_PROJECT_DIR="$WORK"
@@ -26,8 +26,8 @@ trap 'rm -rf "$WORK"' EXIT
 # A throwaway repo with a sample contract: only src/** may change; deploy configs,
 # .env, and keys are forbidden.
 git -C "$WORK" init -q
-mkdir -p "$WORK/src" "$WORK/.umbra"
-cat > "$WORK/.umbra/admission.yaml" <<'YAML'
+mkdir -p "$WORK/src" "$WORK/.signetry"
+cat > "$WORK/.signetry/admission.yaml" <<'YAML'
 version: 1
 allowed_paths:
   - "src/**"
@@ -37,10 +37,10 @@ forbidden_paths:
   - "**/*.pem"
 YAML
 echo "export const x = 1;" > "$WORK/src/app.js"
-git -C "$WORK" add -A && git -C "$WORK" -c user.email=demo@umbra -c user.name=demo commit -qm base
+git -C "$WORK" add -A && git -C "$WORK" -c user.email=demo@signetry -c user.name=demo commit -qm base
 
 echo "============================================================"
-echo " Umbra Claude Code guard — live hook demo"
+echo " Signetry Claude Code guard — live hook demo"
 echo " Contract: allow src/**  ·  forbid deploy.yml / .env / *.pem"
 echo "============================================================"
 echo
@@ -78,5 +78,5 @@ fire 'Agent: Edit "src/app.js" (in scope)' \
 echo "============================================================"
 echo " Forbidden actions were blocked BEFORE they ran; the in-scope"
 echo " edit was allowed. The decision came from deterministic code"
-echo " (umbra-core), not the model. auto_merge is always false."
+echo " (signetry-core), not the model. auto_merge is always false."
 echo "============================================================"
