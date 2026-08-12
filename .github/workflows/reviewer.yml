@@ -3,7 +3,7 @@ name: Reviewer
 # Advisory PR review (umbra-reviewer): surfaces architecture + security issues
 # and posts one recommendation comment. Advisory only — it never merges and never
 # fails the PR. Changes to security-sensitive surfaces (workflows, packaging) are
-# escalated to a human. See https://github.com/bkd-dotcom/umbra-reviewer
+# escalated to a human. See https://github.com/Signetry/reviewer
 on:
   pull_request:
 

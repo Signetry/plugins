@@ -9,7 +9,7 @@ in this repository) run entirely **locally and offline**:
 
 - The `PreToolUse` guard hook reads the proposed file path or command from the
   editor and checks it against your repository's `.umbra/admission.yaml` using the
-  local `umbra` command (from the [umbra-core](https://github.com/bkd-dotcom/umbra-core)
+  local `umbra` command (from the [umbra-core](https://github.com/Signetry/core)
   Python package). No data leaves your machine.
 - The plugin makes **no network requests**, sends **no telemetry or analytics**,
   and stores **no personal data**. It has no servers and no backend.
@@ -22,5 +22,5 @@ Any network behavior is determined solely by tools **you** invoke (e.g. your own
 ## Contact
 
 Questions: open an issue at
-<https://github.com/bkd-dotcom/umbra-plugins/issues> or email
+<https://github.com/Signetry/plugins/issues> or email
 `binaydalai2024@gmail.com`.

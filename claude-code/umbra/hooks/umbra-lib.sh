@@ -66,7 +66,7 @@ umbra_provision() {
   venv_py="$venv/bin/python"
   {
     "$py" -m venv "$venv" \
-      && "$venv_py" -m pip install --quiet --disable-pip-version-check "umbra-core @ git+https://github.com/bkd-dotcom/umbra-core@v0.5.4"
+      && "$venv_py" -m pip install --quiet --disable-pip-version-check "umbra-core @ git+https://github.com/Signetry/core@v0.5.4"
   } >/dev/null 2>&1 || true
   [ -x "$venv_py" ] && "$venv_py" -c "import umbra_core" >/dev/null 2>&1
 }
