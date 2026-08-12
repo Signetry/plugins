@@ -1,0 +1,12 @@
+{
+  "name": "signetry",
+  "description": "Govern coding-agent edits in real time: block out-of-scope or forbidden file writes and dangerous commands before they happen, using your repo's .signetry/admission.yaml. Deterministic (not the model). From signetry-core.",
+  "version": "0.2.2",
+  "author": {
+    "name": "bkd-dotcom",
+    "url": "https://github.com/bkd-dotcom"
+  },
+  "homepage": "https://github.com/Signetry/plugins",
+  "repository": "https://github.com/Signetry/plugins",
+  "license": "MIT"
+}

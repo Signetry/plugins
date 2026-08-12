@@ -1,11 +1,11 @@
 ---
-description: Umbra change-control — stay within the repository's admission contract.
+description: Signetry change-control — stay within the repository's admission contract.
 alwaysApply: true
 ---
 
-# Umbra governance
+# Signetry governance
 
-This repository is governed by Umbra (`.umbra/admission.yaml`). When proposing or
+This repository is governed by Signetry (`.signetry/admission.yaml`). When proposing or
 making changes:
 
 - **Only touch files within the contract's `allowed_paths`.** Never edit
@@ -14,12 +14,12 @@ making changes:
 - **Never run destructive or exfiltrating shell commands** (`rm -rf /`,
   `curl … | bash`, reading `.env`/keys, `git push`, `gh secret …`).
 - Before writing a file you're unsure about, self-check with:
-  `umbra guard --path <file>` (or `umbra guard --command "<cmd>"`). A non-zero
+  `signetry guard --path <file>` (or `signetry guard --command "<cmd>"`). A non-zero
   exit means it's out of scope — do not proceed; explain why to the user.
 - To review the whole change and produce a signed receipt, run:
-  `umbra admit . --agent none --mission "<what you changed>"`.
-- You never merge. Umbra grants only earned authority (observe / analyze /
+  `signetry admit . --agent none --mission "<what you changed>"`.
+- You never merge. Signetry grants only earned authority (observe / analyze /
   branch-PR); a human approves the PR. `auto_merge` is always false.
 
 If a legitimate change needs a path that's out of scope, ask the user to update
-`.umbra/admission.yaml` explicitly — do not work around the contract.
+`.signetry/admission.yaml` explicitly — do not work around the contract.

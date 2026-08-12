@@ -1,53 +1,53 @@
-# Umbra for Codex
+# Signetry for Codex
 
 Govern coding-agent changes in [OpenAI Codex](https://developers.openai.com/codex)
-with [umbra-core](https://github.com/Signetry/core).
+with [signetry-core](https://github.com/Signetry/core).
 
 ## Prerequisite
 
 ```bash
-pip install "umbra-core @ git+https://github.com/Signetry/core@v0.5.4"
+pip install "signetry-core @ git+https://github.com/Signetry/core@v0.6.0"
 ```
 
-Add a `.umbra/admission.yaml` to your repo (allowed/forbidden paths, diff budget,
+Add a `.signetry/admission.yaml` to your repo (allowed/forbidden paths, diff budget,
 required checks). A conservative default applies without one.
 
 ## 1. MCP server (recommended)
 
-Codex reads MCP servers from `~/.codex/config.toml`. Add Umbra's server so the
+Codex reads MCP servers from `~/.codex/config.toml`. Add Signetry's server so the
 agent can run admission / verify / provenance itself:
 
 ```toml
-[mcp_servers.umbra]
+[mcp_servers.signetry]
 command = "python"
-args = ["-m", "umbra_core.mcp_server"]
+args = ["-m", "signetry_core.mcp_server"]
 
-[mcp_servers.umbra.env]
-UMBRA_MCP_ROOTS = "/absolute/path/to/your/repo"
+[mcp_servers.signetry.env]
+SIGNETRY_MCP_ROOTS = "/absolute/path/to/your/repo"
 ```
 
-`UMBRA_MCP_ROOTS` scopes the server to your workspace(s) so it can't be pointed
-at arbitrary host paths. The agent then has `umbra_admit`, `umbra_verify`, and
-`umbra_provenance` tools.
+`SIGNETRY_MCP_ROOTS` scopes the server to your workspace(s) so it can't be pointed
+at arbitrary host paths. The agent then has `signetry_admit`, `signetry_verify`, and
+`signetry_provenance` tools.
 
 ## 2. Lifecycle hook guard (deterministic pre-action check)
 
-Codex supports lifecycle hooks. Configure a hook that runs `umbra guard` before a
+Codex supports lifecycle hooks. Configure a hook that runs `signetry guard` before a
 file write / command, so an out-of-scope or forbidden action is blocked by
 deterministic code (not the model). See the Codex config docs for the exact hook
 schema for your version; the guard command to wire in is:
 
 ```bash
-umbra guard --repo "$REPO" --path "$PROPOSED_PATH"      # exit 1 = deny
-umbra guard --repo "$REPO" --command "$PROPOSED_COMMAND" # exit 1 = deny
+signetry guard --repo "$REPO" --path "$PROPOSED_PATH"      # exit 1 = deny
+signetry guard --repo "$REPO" --command "$PROPOSED_COMMAND" # exit 1 = deny
 ```
 
-`umbra guard` exits non-zero and prints a reason when the action violates the
+`signetry guard` exits non-zero and prints a reason when the action violates the
 contract; exit 0 means allowed.
 
 ## 3. The durable guarantee: CI
 
-Whichever agent opens the PR, make **Umbra Admission** a required check so nothing
+Whichever agent opens the PR, make **Signetry Admission** a required check so nothing
 merges without a signed receipt:
-<https://github.com/marketplace/actions/umbra-admission>. In-editor guards are
+<https://github.com/marketplace/actions/signetry-admission>. In-editor guards are
 best-effort defense-in-depth; the CI check is the enforced gate.

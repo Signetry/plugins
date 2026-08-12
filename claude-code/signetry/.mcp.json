@@ -1,0 +1,6 @@
+{
+  "signetry": {
+    "command": "${CLAUDE_PLUGIN_ROOT}/scripts/signetry-mcp.sh",
+    "args": []
+  }
+}

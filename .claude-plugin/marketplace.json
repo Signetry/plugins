@@ -1,18 +1,18 @@
 {
-  "name": "umbra-plugins",
+  "name": "signetry-plugins",
   "owner": {
     "name": "bkd-dotcom",
     "url": "https://github.com/bkd-dotcom"
   },
   "metadata": {
-    "description": "Umbra — govern coding-agent changes in your editor and CI. Real-time contract enforcement with signed receipts.",
+    "description": "Signetry — govern coding-agent changes in your editor and CI. Real-time contract enforcement with signed receipts.",
     "version": "0.2.2"
   },
   "plugins": [
     {
-      "name": "umbra",
-      "source": "./claude-code/umbra",
-      "description": "Block out-of-scope or forbidden file writes and dangerous commands before they happen, using your repo's .umbra/admission.yaml. Adds a PreToolUse guard hook, an /umbra:admit skill, and the Umbra MCP server. Deterministic — not the model."
+      "name": "signetry",
+      "source": "./claude-code/signetry",
+      "description": "Block out-of-scope or forbidden file writes and dangerous commands before they happen, using your repo's .signetry/admission.yaml. Adds a PreToolUse guard hook, an /signetry:admit skill, and the Signetry MCP server. Deterministic — not the model."
     }
   ]
 }

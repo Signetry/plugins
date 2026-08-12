@@ -1,6 +1,0 @@
-{
-  "umbra": {
-    "command": "${CLAUDE_PLUGIN_ROOT}/scripts/umbra-mcp.sh",
-    "args": []
-  }
-}

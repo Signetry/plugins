@@ -1,10 +1,10 @@
 {
   "mcpServers": {
-    "umbra": {
+    "signetry": {
       "command": "python",
-      "args": ["-m", "umbra_core.mcp_server"],
+      "args": ["-m", "signetry_core.mcp_server"],
       "env": {
-        "UMBRA_MCP_ROOTS": "${workspaceFolder}"
+        "SIGNETRY_MCP_ROOTS": "${workspaceFolder}"
       }
     }
   }
