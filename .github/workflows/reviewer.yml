@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install signetry-reviewer
-        run: pip install "signetry-reviewer>=0.1.0"
+        run: pip install "signetry-reviewer @ git+https://github.com/Signetry/reviewer@v0.1.2"
       - name: Compute the PR diff
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
