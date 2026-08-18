@@ -15,5 +15,5 @@ for PY in python3.13 python3.12 python3.11 python3 python; do
     exec "$PY" -m signetry_core.mcp_server
   fi
 done
-echo "signetry-core[mcp] not available on a Python >=3.11; run: pip install 'signetry-core[mcp] @ git+https://github.com/Signetry/core@v0.6.0'" >&2
+echo "signetry-core[mcp] not available on a Python >=3.11; run: pip install 'signetry-core[mcp] @ git+https://github.com/Signetry/core@v0.7.0'" >&2
 exit 1

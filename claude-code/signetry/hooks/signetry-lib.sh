@@ -66,7 +66,7 @@ signetry_provision() {
   venv_py="$venv/bin/python"
   {
     "$py" -m venv "$venv" \
-      && "$venv_py" -m pip install --quiet --disable-pip-version-check "signetry-core @ git+https://github.com/Signetry/core@v0.6.0"
+      && "$venv_py" -m pip install --quiet --disable-pip-version-check "signetry-core @ git+https://github.com/Signetry/core@v0.7.0"
   } >/dev/null 2>&1 || true
   [ -x "$venv_py" ] && "$venv_py" -c "import signetry_core" >/dev/null 2>&1
 }

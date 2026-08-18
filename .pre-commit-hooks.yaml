@@ -2,11 +2,11 @@
 #
 #   repos:
 #     - repo: https://github.com/Signetry/plugins
-#       rev: v0.2.0
+#       rev: v0.2.2
 #       hooks:
 #         - id: signetry-guard
 #
-# Requires: pip install "signetry-core @ git+https://github.com/Signetry/core@v0.6.0"
+# Requires: pip install "signetry-core @ git+https://github.com/Signetry/core@v0.7.0"
 - id: signetry-guard
   name: Signetry guard (contract scope check)
   description: Block staged changes that fall outside .signetry/admission.yaml scope.

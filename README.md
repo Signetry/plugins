@@ -11,7 +11,7 @@ Signetry decides how much authority an agent's change has earned and proves it. 
 plugins bring that governance *into the tools where agents work* — enforced by
 deterministic code, never by the model itself (an agent can't approve its own change).
 
-> Prerequisite for all integrations: `pip install "signetry-core @ git+https://github.com/Signetry/core@v0.6.0"` and a
+> Prerequisite for all integrations: `pip install "signetry-core @ git+https://github.com/Signetry/core@v0.7.0"` and a
 > `.signetry/admission.yaml` in your repo (a conservative default applies without one).
 
 ## Claude Code plugin (deepest integration)
@@ -22,7 +22,7 @@ out-of-scope or forbidden actions before they happen — using `signetry guard`
 **`/signetry:admit`** skill for on-demand full admission with a signed receipt.
 
 ```
-/plugin marketplace add bkd-dotcom/signetry-plugins
+/plugin marketplace add Signetry/plugins
 /plugin install signetry@signetry-plugins
 ```
 

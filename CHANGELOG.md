@@ -2,6 +2,32 @@
 
 ## [Unreleased]
 
+### Added — a 60-second quickstart in every integration README
+
+- A consistent `## Quickstart (60 seconds)` block at the top of `codex/`, `cursor/`,
+  `claude-code/` and `universal/`: install the kernel → `signetry init` → wire the
+  integration → verify with `signetry guard`.
+- `claude-code/README.md` and `universal/README.md` **did not exist** — those two
+  integrations had no entry point of their own at all.
+- Every documented command was executed before being written down; the
+  `signetry guard` exit codes in the verify step (`1` = deny, `0` = allow) are
+  confirmed against a scaffolded contract rather than assumed.
+
+### Fixed — the documented Claude Code install command was broken
+
+- `README.md` told users to run `/plugin marketplace add bkd-dotcom/signetry-plugins`.
+  That repository is a **404** since the move to the `Signetry` org, so the primary
+  install path for the Claude Code plugin could not work. Now `Signetry/plugins`.
+- The marketplace *name* in `/plugin install signetry@signetry-plugins` is unchanged
+  and correct — it comes from `marketplace.json`'s `name` field, not the repo path.
+
+### Fixed — stale version pins
+
+- `signetry-core` pins move `v0.6.0` → `v0.7.0` across the READMEs, hooks, scripts,
+  the MCP launcher, `codex/config.toml`, the universal guard and the admit skill.
+- The pre-commit `rev:` in `.pre-commit-hooks.yaml` said `v0.2.0` while `v0.2.2` is
+  released; it and the new universal README now reference `v0.2.2`.
+
 ### Changed — rebranded Signetry → Signetry
 
 - Platform kernel dependency `signetry-core` (installed from the git tag
