@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+### Fixed — the Claude Code plugin declared the wrong license
+
+- `claude-code/signetry/.claude-plugin/plugin.json` declared `"license": "MIT"`
+  while the project is **All Rights Reserved**. Left as-is, the plugin directory
+  arguably shipped under MIT terms — i.e. granted rights the rest of the project
+  reserves. Now `"Proprietary — All Rights Reserved"`, matching
+  `signetry-core`'s `pyproject.toml`.
+- There is no `LICENSE` file in this repo and GitHub detects no license, so this
+  declaration was the only MIT claim; nothing else needed changing.
+
 ### Added — a 60-second quickstart in every integration README
 
 - A consistent `## Quickstart (60 seconds)` block at the top of `codex/`, `cursor/`,
