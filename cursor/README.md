@@ -3,14 +3,40 @@
 Two ways to govern coding-agent changes in Cursor with
 [signetry-core](https://github.com/Signetry/core).
 
-## Prerequisite
+## Quickstart (60 seconds)
 
 ```bash
-pip install "signetry-core @ git+https://github.com/Signetry/core@v0.6.0"
+# 1. install the kernel (source-available; not on PyPI)
+pip install "signetry-core @ git+https://github.com/Signetry/core@v0.7.0"
+
+# 2. scaffold a contract in your repo
+cd /path/to/your/repo
+signetry init                 # writes a conservative .signetry/admission.yaml
 ```
 
-Add a `.signetry/admission.yaml` to your repo declaring allowed/forbidden paths,
-diff budget, and required checks (a conservative default applies without one).
+### 3. Wire Cursor to Signetry
+
+```bash
+mkdir -p .cursor/rules
+cp mcp.json .cursor/mcp.json          # or merge into an existing .cursor/mcp.json
+cp signetry.mdc .cursor/rules/        # project rule (advisory)
+```
+
+Reload Cursor; the agent can then call `signetry_admit`, `signetry_verify` and
+`signetry_provenance`.
+
+### Verify it works
+
+```bash
+# a path outside the contract's allowed_paths must be denied (exit 1)
+signetry guard --repo . --path .github/workflows/release.yml; echo "exit=$?"
+
+# a path inside it must be allowed (exit 0)
+signetry guard --repo . --path src/app.py; echo "exit=$?"
+```
+
+Cursor has no deterministic pre-write hook, so the enforced gate is CI — see §2 and
+the note at the end.
 
 ## 1. MCP server (recommended)
 

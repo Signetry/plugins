@@ -6,7 +6,7 @@
 # or manually. It checks proposed file paths and/or a command against the repo's
 # .signetry/admission.yaml and exits non-zero (blocking) on a violation.
 #
-# Requires:  pip install "signetry-core @ git+https://github.com/Signetry/core@v0.6.0"
+# Requires:  pip install "signetry-core @ git+https://github.com/Signetry/core@v0.7.0"
 #
 # Usage:
 #   signetry-guard.sh --path src/app.py
@@ -17,7 +17,7 @@
 set -euo pipefail
 
 if ! command -v signetry >/dev/null 2>&1; then
-  echo "signetry-guard: signetry-core not installed. Run: pip install 'signetry-core @ git+https://github.com/Signetry/core@v0.6.0'" >&2
+  echo "signetry-guard: signetry-core not installed. Run: pip install 'signetry-core @ git+https://github.com/Signetry/core@v0.7.0'" >&2
   # Fail open by default so this never blocks a commit unexpectedly; set
   # SIGNETRY_GUARD_STRICT=1 to fail closed when signetry is missing.
   [ "${SIGNETRY_GUARD_STRICT:-0}" = "1" ] && exit 1 || exit 0

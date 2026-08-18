@@ -10,7 +10,7 @@ report the result to the user.
 Steps:
 
 1. Confirm `signetry` is available: run `signetry --help`. If it is not installed, tell
-   the user to run `pip install "signetry-core @ git+https://github.com/Signetry/core@v0.6.0"` and stop.
+   the user to run `pip install "signetry-core @ git+https://github.com/Signetry/core@v0.7.0"` and stop.
 2. Run admission over the change already present in the working tree (no agent is
    re-invoked — the change being governed is what's on disk):
 

@@ -22,8 +22,8 @@ fi
 
 # Could not activate. Say so LOUDLY and specifically — do not pretend to protect.
 if signetry_py311plus >/dev/null 2>&1; then
-  echo "Signetry plugin loaded but INACTIVE: could not install signetry-core (offline?). The guard is NOT enforcing anything. Fix with: pip install 'signetry-core @ git+https://github.com/Signetry/core@v0.6.0'"
+  echo "Signetry plugin loaded but INACTIVE: could not install signetry-core (offline?). The guard is NOT enforcing anything. Fix with: pip install 'signetry-core @ git+https://github.com/Signetry/core@v0.7.0'"
 else
-  echo "Signetry plugin loaded but INACTIVE: needs Python >=3.11, which was not found (your default python3 may be older). The guard is NOT enforcing anything. Install Python 3.11+ and: pip install 'signetry-core @ git+https://github.com/Signetry/core@v0.6.0'"
+  echo "Signetry plugin loaded but INACTIVE: needs Python >=3.11, which was not found (your default python3 may be older). The guard is NOT enforcing anything. Install Python 3.11+ and: pip install 'signetry-core @ git+https://github.com/Signetry/core@v0.7.0'"
 fi
 exit 0
