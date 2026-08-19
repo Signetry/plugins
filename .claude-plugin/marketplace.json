@@ -1,8 +1,8 @@
 {
   "name": "signetry-plugins",
   "owner": {
-    "name": "bkd-dotcom",
-    "url": "https://github.com/bkd-dotcom"
+    "name": "Signetry",
+    "url": "https://github.com/Signetry"
   },
   "metadata": {
     "description": "Signetry — govern coding-agent changes in your editor and CI. Real-time contract enforcement with signed receipts.",
