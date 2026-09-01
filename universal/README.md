@@ -12,7 +12,7 @@ at commit time regardless of which tool produced the change.
 
 ```bash
 # 1. install the kernel (BUSL-1.1 engine; installed from a git tag, not PyPI)
-pip install "signetry-core @ git+https://github.com/Signetry/core@v0.7.0"
+pip install "signetry-core @ git+https://github.com/Signetry/core@v0.8.0"
 
 # 2. scaffold a contract in your repo
 cd /path/to/your/repo
@@ -26,7 +26,7 @@ With [pre-commit](https://pre-commit.com/) — add to `.pre-commit-config.yaml`:
 ```yaml
 repos:
   - repo: https://github.com/Signetry/plugins
-    rev: v0.2.2
+    rev: v0.3.0
     hooks:
       - id: signetry-guard
 ```

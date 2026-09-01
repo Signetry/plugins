@@ -1,7 +1,7 @@
 {
   "name": "signetry",
   "description": "Govern coding-agent edits in real time: block out-of-scope or forbidden file writes and dangerous commands before they happen, using your repo's .signetry/admission.yaml. Deterministic (not the model). From signetry-core.",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "author": {
     "name": "Signetry",
     "url": "https://github.com/Signetry"
