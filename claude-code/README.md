@@ -10,7 +10,7 @@ blocked by code before it happens, not merely discouraged in a prompt.
 ## Quickstart (60 seconds)
 
 ```bash
-# 1. install the kernel (source-available; not on PyPI)
+# 1. install the kernel (BUSL-1.1 engine; installed from a git tag, not PyPI)
 pip install "signetry-core @ git+https://github.com/Signetry/core@v0.7.0"
 
 # 2. scaffold a contract in your repo

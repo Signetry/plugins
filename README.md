@@ -1,8 +1,7 @@
 # signetry-plugins
 
-> **Copyright (c) 2026 Binay Dalai. All rights reserved.**
-> This repository is strictly for viewing and contributing to the original project. You may not use, copy, modify, distribute, or commercialize this code for your own personal or commercial projects without explicit written permission. Only the original author retains the right to use and monetize this project.
-
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![PRs welcome (CLA)](https://img.shields.io/badge/PRs-welcome%20(CLA)-brightgreen.svg)](CONTRIBUTING.md)
 
 **Govern coding-agent changes inside your editor — and in CI — with signed receipts.**
 
@@ -103,4 +102,12 @@ merges without a signed receipt:
 
 ## License
 
-**Copyright (c) 2026 Binay Dalai. All rights reserved.** This code is not open source. You may not use, copy, modify, distribute, or commercialize it for your own personal or commercial purposes without explicit written permission from the author, who alone retains the right to use and monetize this project. See [CONTRIBUTING.md](CONTRIBUTING.md).
+[Apache-2.0](LICENSE). Use it, fork it, ship it commercially — no strings.
+
+This repository is part of Signetry's [open-core model](https://github.com/Signetry/signetry/blob/main/LICENSING.md):
+the **integration surface is Apache-2.0** so anyone can add an agent, an editor, or a
+CI adapter, while the engine ([`Signetry/core`](https://github.com/Signetry/core)) is
+source-available under BUSL-1.1 and converts to Apache-2.0 on 2030-08-31.
+
+Contributions are accepted under the [CLA](CLA.md) — it lets us move a well-built
+adapter into the engine later without asking every contributor for permission again.

@@ -2,6 +2,35 @@
 
 ## [Unreleased]
 
+### Changed — Signetry is now open core; this repo is Apache-2.0
+
+- An `Apache-2.0` **LICENSE** file is now present at the repo root. The whole
+  integration surface — the Claude Code plugin, Cursor, Codex, and the universal
+  guard — is Apache-2.0: use it, fork it, ship it commercially, no permission needed.
+  The engine ([`Signetry/core`](https://github.com/Signetry/core)) is source-available
+  under BUSL-1.1 and converts to Apache-2.0 on 2030-08-31.
+- `claude-code/signetry/.claude-plugin/plugin.json` now declares
+  `"license": "Apache-2.0"`, **superseding the entry below** in this same unreleased
+  block (which set it to `Proprietary — All Rights Reserved` and noted that no
+  `LICENSE` file existed). That change was correct when the project was
+  all-rights-reserved; it no longer is.
+- The all-rights-reserved framing is gone from `README.md`, `CONTRIBUTING.md`,
+  `CLA.md`, `CONTRIBUTORS.md`, and the CLA workflow's PR comment.
+- **The CLA is kept.** Open core needs relicensing rights: an adapter contributed here
+  may later be promoted into the BUSL-1.1 engine. Contributors keep every right
+  Apache-2.0 grants, including to their own contribution — see [CLA.md](CLA.md) §2–3.
+- **The CLA's fallback licence grant is now non-exclusive.** It previously granted the
+  Owner an *exclusive* licence where copyright assignment is not permitted by law, which
+  would have stripped contributors of the right to use their own contribution — directly
+  contradicting the rights the LICENSE grants everyone. The CLA text is now identical
+  across all Signetry repositories (bar the engine/integration licence wording) so the
+  legal terms cannot drift per-repo again. See [CLA.md](CLA.md) §2–3.
+
+### Added — community health files
+
+- `CODE_OF_CONDUCT.md` (Contributor Covenant v2.1), `SECURITY.md` (private reporting
+  via GitHub Security Advisories), and GitHub issue templates.
+
 ### Fixed — the Claude Code plugin declared the wrong license
 
 - `claude-code/signetry/.claude-plugin/plugin.json` declared `"license": "MIT"`
