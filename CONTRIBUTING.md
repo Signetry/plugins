@@ -16,7 +16,7 @@ Every integration here is a thin, deterministic wrapper around the `signetry` CL
 you need the kernel installed first (it is not on PyPI — install from the git tag):
 
 ```bash
-pip install "signetry-core @ git+https://github.com/Signetry/core@v0.7.0"
+pip install "signetry-core @ git+https://github.com/Signetry/core@v0.8.0"
 ```
 
 Then clone this repo and scaffold a contract in a scratch repo to test against:

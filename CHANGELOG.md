@@ -1,6 +1,6 @@
 # Changelog — Signetry plugins
 
-## [Unreleased]
+## [0.3.0] — 2026-09-01
 
 ### Changed — Signetry is now open core; this repo is Apache-2.0
 
@@ -62,12 +62,12 @@
 
 ### Fixed — stale version pins
 
-- `signetry-core` pins move `v0.6.0` → `v0.7.0` across the READMEs, hooks, scripts,
+- `signetry-core` pins move `v0.6.0` → `v0.8.0` across the READMEs, hooks, scripts,
   the MCP launcher, `codex/config.toml`, the universal guard and the admit skill.
 - The pre-commit `rev:` in `.pre-commit-hooks.yaml` said `v0.2.0` while `v0.2.2` is
-  released; it and the new universal README now reference `v0.2.2`.
+  released; it and the new universal README now reference `v0.3.0`, this release.
 
-### Changed — rebranded Signetry → Signetry
+### Changed — rebranded Umbra → Signetry
 
 - Platform kernel dependency `signetry-core` (installed from the git tag
   `git+https://github.com/Signetry/core@v0.6.0`), including the `[mcp]` extra used
